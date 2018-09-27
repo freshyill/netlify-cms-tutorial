@@ -1,0 +1,25 @@
+name: gatsby-netlify
+
+proxy:
+  nodejs:
+    - gatsby.lndo.site
+
+services:
+  nodejs:
+    type: node:9
+    overrides:
+      services:
+        ports: [8000:8000]
+    globals:
+      gatsby-cli: "latest"
+      surge: "latest"
+
+tooling:
+  npm:
+    service: nodejs
+  node:
+    service: nodejs
+  gatsby:
+    service: nodejs
+  surge:
+    service: nodejs
